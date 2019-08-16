@@ -1,0 +1,18 @@
+.hero_info {
+  padding: 4rem 0;
+  
+  h1 {
+    text-align: center;
+    
+    &.dynamic_title {
+      font-style: italic;
+      font-weight: 600;
+      margin-bottom: 3rem;
+    }
+  }
+
+  p {
+    text-align: justify;
+    padding: 0 2.5rem;
+  }
+}

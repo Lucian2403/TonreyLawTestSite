@@ -1,0 +1,261 @@
+.site-content {
+  margin-top: $height-header-menu;
+
+  @include respond(phone) {
+    margin-top: 7rem;
+  }
+}
+
+//////////////////////////////
+/////HOME PAGE IMAGE GRID/////
+//////////////////////////////
+.home_images_grid {
+  height: 70rem;
+
+  display: grid;
+  grid-gap: .8rem;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-rows: 50% 50%;
+
+  @include respond(tab-land) {
+    height: 40rem;
+    grid-gap: .4rem;
+    padding: 0 2rem;
+  }
+
+  @include respond(tab-port) {
+    height: 40rem;
+  }
+
+  @include respond(phone) {
+    height: 25rem;
+    padding: 0;
+  }
+
+  li {
+    list-style: none;
+
+    img {
+      -webkit-object-fit: cover;
+      object-fit: cover;
+    }
+  }
+  .woman {
+    grid-column: 1/2;
+    grid-row: 1/3;
+  }
+  .team {
+    grid-column: 2/4;
+    .image_team {
+      object-position: top;
+    }
+  }
+}
+
+
+/////////////////////
+.home_info {
+  margin-top: 9rem;
+  width: 100%;
+
+  @include respond(tab-port) {
+    padding: 0 2.5rem;
+  }
+
+  @include respond(phone) {
+    margin-top: 5rem;
+    padding: 0 1rem;
+  }
+
+  .main_info {
+    text-align: center;
+    h1 {
+      margin-bottom: 5rem;
+
+      @include respond(phone) {
+        margin: 0 3rem 2rem 3rem;
+      }
+    }
+  }
+
+  .btn_home {
+    margin-top: 4.5rem;
+  }
+}
+
+/////////////////////
+.parralax_scroll {
+  margin-top: 11rem;
+  position: relative;
+
+  @include respond(tab-port) {
+    padding: 0 2rem;
+  }
+
+  @include respond(phone) {
+    padding: 0;
+  }
+
+  .image_scroll{
+    width: 100%;
+    height: 40.1rem;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @include respond(tab-port) {
+      background-position: 20% 30%;
+      background-size: initial;
+      height: 30rem;
+    }
+
+    @include respond(phone) {
+      height: 25rem;
+    }
+  }
+
+  .text_scroll {
+    position: absolute;
+    bottom: 6rem;
+    left: 5rem;
+    color: $color-light-grey;
+
+    @include respond(phone) {
+      font-size: 2.5rem;
+      bottom: 10%;
+      left: 5%;
+    }
+  }
+}
+
+
+/////////////////////////
+.specialisaties {
+  margin-top: 10rem;
+
+  @include respond(tab-land) {
+    padding: 0 2rem;
+    margin-top: 8rem;
+  }
+
+  @include respond(phone) {
+    margin-top: 6rem;
+    padding: 0 0rem;
+  }
+
+  .info_slider {
+    max-width: 70rem;
+    width: 100%;
+    margin: 0 auto 7rem auto;
+    text-align: center;
+
+    @include respond(phone) {
+      margin-bottom: 4rem;
+      padding: 0 1.5rem;
+    }
+
+    h2 {
+      margin-bottom: 3rem;
+    }
+  }
+}
+
+//////////////////////////////
+/////PAGE LINK OWL-SLIDER/////
+//////////////////////////////
+.image_slider {
+  margin: 0 auto;
+  width: 100%;
+
+  .owl-nav {
+    display: block !important;
+
+    .owl-prev {
+      position: absolute;
+      top: 35%;
+      left: -3px;
+      font-size: 2rem;
+      padding: 3rem 2rem;
+      color: $color-light-grey;
+      background-color: $color-blue;
+      transition: .3s;
+
+      @include respond(tab-land) {
+        left: -1rem;
+        top: 32%;
+      }
+
+      @include respond(phone) {
+        left: -.5rem;
+      }
+
+      &:hover {
+        background-color: lighten($color-blue, 10%);
+      }
+    }
+
+    .owl-next {
+      position: absolute;
+      top: 35%;
+      right: -2px;
+      font-size: 2rem;
+      padding: 3rem 2rem;
+      color: $color-light-grey;
+      background-color: $color-blue;
+      transition: .3s;
+
+      @include respond(tab-land) {
+        right: -1rem;
+        top: 32%;
+      }
+
+      @include respond(phone) {
+        right: -.5rem;
+      }
+
+      &:hover {
+        background-color: lighten($color-blue, 10%);
+      }
+    }
+  }
+  .owl-carousel {
+    width: 100%;
+
+    li {
+      list-style: none;
+
+
+      .image_pic {
+        overflow: hidden;
+        img {
+          max-width: 100%;
+          height: 30rem;
+          object-fit: cover;
+          transition: transform 1s, filter 1.5s ease-in-out;
+          transform-origin: center center;
+          filter: brightness(85%);
+
+          &:hover {
+            transform: scale(1.3);
+            filter: brightness(100%);
+          }
+        }
+      }
+
+      h3 {
+        text-transform: uppercase;
+        color: $color-blue;
+        font-weight: 400;
+        font-size: 2rem;
+        text-align: center;
+        margin-top: 2rem;
+
+        @include respond(phone) {
+          font-size: 2.3rem;
+          margin-top: 4rem;
+        }
+      }
+    }
+  }
+}

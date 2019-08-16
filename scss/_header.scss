@@ -1,0 +1,198 @@
+.site-header {
+  position: fixed;
+  width: 100%;
+  background-color: #FFFFFF;
+  top: 0;
+  -webkit-box-shadow: 0 1rem 2rem rgba(black, .2);
+  box-shadow: 0 1rem 2rem rgba(black, .2);
+  padding: 0 3rem;
+
+  z-index: 20;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  height: $height-header-menu;
+
+  @include respond(phone) {
+    height: 7rem;
+  }
+
+  .site-branding {
+
+    .site-title {
+
+      a,
+      a:visited {
+        text-decoration: none;
+        color: $color-blue;
+        font-size: 3rem;
+        font-family: "Roboto Black";
+
+        @include respond(phone) {
+          font-size: 2.7rem;
+          width: 100%;
+        }
+      }
+    }
+
+    @include respond(tab-land) {
+      transform: translateX(-3%);
+    }
+
+    @include respond(phone) {
+      transform: translateX(-10%);
+    }
+  }
+
+  .main-navigation {
+
+    @include respond(tab-land) {
+      @include tablet_menu;
+    }
+
+    .menu {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .sub-menu {
+        display: none;
+      }
+
+      .current-menu-item {
+        a,
+        a:visited {
+          padding: .8rem 0;
+          border-bottom: 1px solid $color-blue;
+          color: $color-blue;
+        }
+      }
+
+      li {
+        list-style: none;
+
+        &:not(:last-child) {
+          margin-right: 8rem;
+        }
+
+        a,
+        a:visited{
+          text-decoration: none;
+          color: $color-grey;
+          font-size: 1.8rem;
+
+          &:hover {
+            color: $color-blue;
+          }
+        }
+      }
+
+      @include respond(tab-land) {
+        display: none;
+      }
+    }
+  }
+
+  .header_icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include respond(tab-land) {
+      display: none;
+    }
+    .icons {
+      background-color: $color-blue;
+      width: 5rem;
+      height: 5rem;
+    }
+    .search_icon {
+      cursor: pointer;
+
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      align-items: center;
+
+      &:focus {
+
+      }
+      .screen-reader-text {
+        display: none;
+      }
+
+      .search-field {
+        display: none;
+        padding: .3rem 1.5rem;
+        margin-right: 2rem;
+        height: 3rem;
+        width: 25rem;
+        border-radius: 1.5rem;
+        border: 1px $color-blue solid;
+        outline: none;
+      }
+
+      .search-submit {
+        display: none;
+
+      }
+    }
+
+    a,
+    a:visited {
+      text-decoration: none;
+    }
+    .phone_icon {
+      margin-left: 2rem;
+      cursor: pointer;
+    }
+  }
+  i {
+    color: $color-light-grey;
+    font-size: 2.5rem;
+    padding: 25%
+  }
+}
+
+//////////////////////////
+////////MMENU SLIDE///////
+//////////////////////////
+#nav-mobile {
+    width: 50rem;
+
+  @include respond(phone) {
+    width: 30rem;
+  }
+
+  li {
+    font-size: 1.8rem;
+    padding: 2rem 1rem;
+    vertical-align: center;
+
+    &:hover {
+      color: $color-orange;
+    }
+  }
+
+  .mm-navbar {
+    a {
+      font-size: 2.7rem;
+      font-weight: 300;
+      color: $color-orange;
+    }
+
+    .mm-search {
+      input {
+        min-height: 4rem;
+        height: 4rem;
+      }
+    }
+  }
+
+  .mm-listview {
+    a {
+      font-size: 2.2rem;
+    }
+  }
+}

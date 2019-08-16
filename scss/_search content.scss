@@ -1,0 +1,76 @@
+.search {
+  .content-area {
+    height: 50rem;
+    text-align: center;
+    overflow: hidden;
+
+    .page-header {
+      margin-top: 10rem;
+      h1 {
+        font-family: Roboto;
+        font-weight: 300;
+        font-size: 3rem;
+        
+        span {
+          font-style: italic;
+          font-size: 4rem;
+        }
+      }
+    }
+
+    .page {
+      margin-top: 4rem;
+
+      .entry-header {
+        margin-bottom: 1.5rem;
+        h2 {
+          a,
+          a:visited {
+            text-decoration: none;
+            color: $color-orange;
+            font-weight: 300;
+
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+
+      .entry-footer {
+
+        a,
+        a:visited {
+          text-decoration: none;
+          color: $color-orange;
+          font-weight: 300;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}
+
+//////////////////////
+////Nothing FOUND////
+/////////////////////
+.search-no-results {
+  overflow: hidden;
+
+  .site-main {
+    margin-top: 15rem;
+
+    .page-title {
+        font-family: Roboto;
+        font-weight: 300;
+        font-size: 3rem;
+        margin-bottom: 2rem;
+    }
+    p {
+      font-weight: 300;
+    }
+  }
+}

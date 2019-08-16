@@ -1,0 +1,258 @@
+.title_page {
+  width: 100%;
+  height: 25rem;
+  background-position: center;
+  background-attachment: fixed;
+  text-align: center;
+  overflow: hidden;
+
+  h1 {
+    color: $color-light-grey;
+    margin-top: 9rem;
+    font-size: 5rem;
+  }
+}
+
+.page_info {
+  max-width: 80rem;
+  width: 100%;
+  margin: 0 auto;
+
+  margin-top: 9rem;
+
+  @include respond(tab-port) {
+    margin-top: 6rem;
+  }
+
+  @include respond(phone) {
+    padding: 0 2rem;
+  }
+
+  p {
+    margin: 5rem 0 4.5rem 0;
+
+    @include respond(phone) {
+      margin: 3rem 0 4rem 0;
+      text-align: justify;
+    }
+  }
+}
+
+//////////////////////////////
+/////EMPLOYERS ROW SLIDER/////
+//////////////////////////////
+.employers-slide {
+  max-width: 135rem;
+  width: 100%;
+  margin: 0 auto;
+
+  margin-top: 10rem;
+
+  @include respond(tab-land) {
+    padding: 0 1.5rem;
+  }
+  @include respond(phone) {
+    padding: 0;
+  }
+
+  .owl-stage {
+    margin: auto;
+  }
+
+  li.slide-employers__main {
+    list-style: none;
+    text-align: center;
+
+    a,
+    a:visited {
+      text-decoration: none;
+    }
+
+    .profile-pic {
+      overflow: hidden;
+      margin-bottom: 4rem;
+
+      @include respond(tab-land) {
+        height: 45rem;
+      }
+
+      @include respond(tab-port-small) {
+        height: 34rem;
+      }
+
+       img {
+        height: 30rem;
+        filter: grayscale(100%);
+        object-fit: cover;
+        transition: transform .6s, filter .8s ease-in-out;
+
+        &:hover {
+          filter: grayscale(40%);
+          transform: scale(1.1);
+        }
+
+        @include respond(tab-land) {
+          //object-fit: initial;
+          height: auto;
+        }
+      }
+    }
+
+    .full-name {
+      display: inline-block;
+
+      h3 {
+        color: $color-blue;
+        font-size: 2.7rem;
+        font-style: italic;
+        font-weight: 300;
+        padding: .3rem .5rem;
+        transition: .3s;
+        backface-visibility: hidden;
+
+        &:hover {
+          transform: scale(1.05) rotate(-2deg);
+          box-shadow: 0 .5rem .6rem rgba($color-dark-grey, .6);
+        }
+      }
+    }
+
+    .specialization {
+      display: flex;
+      justify-content: center;
+      margin: 2.5rem 0;
+
+      a,
+      a:visited {
+        text-decoration: none;
+        color: $color-grey;
+      }
+
+      h4 {
+        font-size: 1.4rem;
+        font-family: Roboto;
+        transition: .3s;
+
+        @include respond(tab-port) {
+          font-size: 1.8rem;
+        }
+
+        &:hover {
+          text-decoration: underline;
+          transform: scale(1.05);
+        }
+
+        &:last-child::before {
+          content: '|';
+          margin: 0 .3rem 0 .5rem;
+        }
+      }
+    }
+
+    .bio {
+      margin-bottom: 2rem;
+    }
+
+    .social-media {
+      display: inline-block;
+
+      &__link,
+      &__link:visited {
+        color: $color-light-grey;
+
+        &:not(:last-child) {
+          margin-right: 1.5rem;
+        }
+
+        i {
+          background-color: $color-grey;
+          background-position: center;
+          border-radius: .5rem;
+          padding: .4rem;
+          font-size: 1.4rem;
+          width: 2.2rem;
+          height: 2.2rem;
+          transition: .3s;
+
+          &:hover {
+            background-color: $color-blue;
+          }
+        }
+      }
+    }
+  }
+}
+
+///////////////////////////////////////
+/////TEXT SLIDER & PARALLAX SCROLL/////
+///////////////////////////////////////
+.text_slider {
+  margin-top: 9rem;
+  width: 100%;
+  height: 40.1rem;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .owl-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .owl-dot {
+      width: 1.5rem;
+      height: 1.5rem;
+      border-radius: 50%;
+      border: 2px solid $color-light-grey;
+      &:not(:last-child) {
+        margin-right: 1rem;
+      }
+    }
+
+    .active {
+      width: 1.5rem;
+      height: 1.5rem;
+      border-radius: 50%;
+      background-color: $color-light-grey;
+    }
+  }
+
+  .info_slide {
+    max-width: 80rem;
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 5%;
+
+    li {
+      list-style: none;
+    }
+    h2 {
+      color: $color-light-grey;
+
+      @include respond(phone) {
+        font-size: 3rem;
+        margin-bottom: 2rem;
+      }
+    }
+
+    p {
+      color: $color-light-grey;
+
+      @include respond(phone) {
+        font-size: 1.5rem;
+        line-height: 2.5rem;
+      }
+    }
+  }
+}
+
+///////////////////////////////////////
+/////IMAGE SPECIALIZATION SLIDER///////
+///////////////////////////////////////
+.image_slider {
+
+  .page_slides {
+    margin-bottom: 5rem;
+  }
+}

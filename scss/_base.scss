@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900');
+
+//COLORS
+
+$color-blue: #0C1F41;
+$color-orange: #eb9e31;
+$color-light-grey: #f8f9fa;
+$color-grey-text: #dee2e6;
+$color-grey: #939393;
+$color-dark-grey: #343a40;
+
+$height-header-menu: 10rem;
+
+
+//MIXIN
+@mixin tablet_menu() {
+
+  .hamburger {
+    width: 3.5rem;
+
+    .line {
+      width: 100%;
+      height: .4rem;
+      display: block;
+      background-color: $color-dark-grey;
+
+      transition: .3s ease-in-out;
+
+      &:not(:last-child) {
+        margin-bottom: .6rem;
+      }
+    }
+
+    &:hover {
+      .line:nth-child(2n) {
+        margin: .9rem 0;
+      }
+    }
+  }
+
+  .x-effect {
+    transition: .4s ease-in-out;
+
+    .line:first-child {
+      transform: translateY(1rem) rotate(-45deg);
+    }
+
+    .line:nth-child(2n) {
+      margin-left: 3rem;
+      opacity: 0;
+    }
+
+    .line:nth-child(3n) {
+      transform: translateY(-1rem) rotate(45deg);
+    }
+  }
+}
+
+
+
+//RESPONSIVE DESIGN MIXIN
+// MEDIA QUERY MANAGER
+
+/*
+0 - 600px:      Phone
+600 - 782px:    Tablet portrait small
+782 - 900px:    Tablet portrait
+900 - 1200px    Tablet landscape
+[1200 - 1800] is where our normal styles apply
+2100px +        Big desktop
+
+$breakpoint argument choices:
+- phone
+- tab-port
+- tab-port-small
+- tab-land
+- big-desktop
+
+
+1em = 16px;
+em for 600px is (600/16) = 37.5em
+*/
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media only screen and (max-width: 37.5em) { @content };    //600px;
+  }
+
+  @if $breakpoint == tab-port-small  {
+    @media only screen and (max-width: 48.875em) { @content };     //782px;
+  }
+
+  @if $breakpoint == tab-port  {
+    @media only screen and (max-width: 56.25em) { @content };     //900px;
+  }
+
+  @if $breakpoint == tab-land {
+    @media only screen and (max-width: 75em) { @content };    //1200px;
+  }
+
+  @if $breakpoint == big-desktop {
+    @media only screen and (min-width: 131.25em) { @content };    //2100px;
+  }
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0 .5rem;
+
+  @include respond(tab-land) {
+    padding: 0;
+  }
+
+  font-family: Roboto;
+}
+
+//TYPOGRAPHY
+html {
+  //This define what 1rem is
+  font-size: 62.5%;   //1rem = 10px; 10px/16px = 62.5%
+  font-family: 'Roboto', sans-serif;
+
+  // RESPONSIVE MEDIA
+  @include respond(tab-port) {
+    font-size: 56.25%;   //1rem = 9px, 9/16 = 56.25%;
+  }
+
+  @include respond(big-desktop) {
+    font-size: 75%;     //1rem = 12, 12/16 = 75%
+  }
+}
+
+h1,h2,h3,h4,h5,h6 {
+  margin: 0;
+}
+
+h1 {
+  font-size: 4.5rem;
+  color: $color-blue;
+  font-family: Roboto;
+  font-weight: 300;
+}
+h2 {
+  font-size: 3.5rem;
+  font-family: Roboto;
+  font-weight: 300;
+  color: $color-blue;
+}
+h3 {
+  font-size: 2.2rem;
+  font-family: Roboto;
+}
+p {
+  line-height: 3rem;
+  font-size: 1.7rem;
+  color: $color-grey;
+  font-family: Roboto;
+  strong {
+    margin: 1rem 0 4rem 0;
+    display: block;
+    color: $color-dark-grey;
+  }
+
+  @include respond(tab-land) {
+    font-size: 1.8rem;
+  }
+}
+
+//GLOBAL
+//.site-content {
+//  margin-top: 20rem;
+//}
+
+
+.container{
+  max-width: 110rem;
+  width: 100%;
+  margin: 0 auto;
+
+  @include respond(big-desktop) {
+    max-width: 115rem;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  @include respond(tab-land) {
+    max-width: 90rem;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  //@include  respond(tab-port) {
+  //  max-width: 85rem;
+  //  width: 100%;
+  //  margin: 0 auto;
+  //}
+
+  @include respond(tab-port-small) {
+    max-width: 85rem;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  @include respond(phone) {
+    max-width: 50rem;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+.logged-in {
+  .site-header {
+    top: 32px;
+
+    @include respond(tab-port-small) {
+      top: 46px;
+    }
+  }
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+#wpadminbar {
+  @include respond(phone) {
+    position: fixed;
+  }
+}
+
+.button {
+  text-decoration: none;
+  font-size: 1.8rem !important;
+  padding: 1.5rem 4rem;
+
+  transition: .3s;
+}
+
+.button_primary,
+.button_primary:visited {
+  background-color: $color-orange;
+  color: $color-light-grey;
+  border-radius: .2rem;
+
+  &:hover {
+    background-color: darken($color-orange, 15%);
+  }
+}
